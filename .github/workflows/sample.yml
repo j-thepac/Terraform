@@ -22,11 +22,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Terraform 
+        working-directory: Terraform/
         run: |
           terraform fmt -check
           terraform init
-          terraform plan
-          terraform apply
+          terraform plan -no-color
+          terraform apply -no-color -auto-approve
 
       - name: Logs
         run: |
