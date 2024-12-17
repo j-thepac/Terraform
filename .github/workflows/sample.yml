@@ -23,10 +23,10 @@ jobs:
 
       - name: Terraform 
         run: |
-        terraform fmt -check
-        terraform init
-        terraform plan
-        terraform apply
+          terraform fmt -check
+          terraform init
+          terraform plan
+          terraform apply
 
       - name: Logs
         run: |
