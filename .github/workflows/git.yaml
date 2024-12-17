@@ -1,0 +1,9 @@
+name: GitRunner
+on: workflow-dispatch
+jobs:
+  uses: ubuntu-latest
+  job1
+    steps:
+      name: step1
+      shell: bash
+      run: echo "hi"
