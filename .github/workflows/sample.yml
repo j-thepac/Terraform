@@ -14,12 +14,12 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo "Start"
-
-      - name: Checkout Repo
-        uses: actions/checkout@v4
       
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v3
+      
+      - name: Checkout Repo
+        uses: actions/checkout@v4
 
       - name: Terraform 
         run: |
