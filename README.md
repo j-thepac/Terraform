@@ -6,12 +6,12 @@ You can run each of the terraform scripts either locally or using GithubActions
 
 Pre-Req:
     For running locally, make sure u have installed :
-    1. Docker
-    2. Terraform
+        1. Docker
+        2. Terraform
 
 Locally:
     1. Cd to the folder 
-    2.Run below commands 
+    2. Run below commands 
     ```
      terraform fmt -check
      terraform init
