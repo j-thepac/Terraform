@@ -1,0 +1,28 @@
+name: Test2
+on: 
+    workflow_dispatch:
+        inputs:
+            a: 
+              type: string
+
+
+
+jobs:
+    job1:
+       runs-on: [ubuntu-latest]
+       steps:
+          - name: Git Creation Using Terraform
+            env:
+              key: ${{ secrets.token }}
+            uses: hashicorp/setup-terraform@v3
+            uses: actions/checkout@v4
+            working-directory: TerraformGit/
+            run: |
+                  terraform fmt -check
+                  terraform init
+                  terraform plan -no-color
+                  terraform apply -no-color -auto-approve
+                  echo ${{inputs.a}}
+             
+
+             
