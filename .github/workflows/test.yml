@@ -13,6 +13,9 @@ jobs:
        defaults:
            run:
                working-directory: TerraformGit/
+           env:
+              token: ${{ secrets.token }}
+              TF_LOG: DEBUG
        steps:
 
           - name: Install Terraform
@@ -21,9 +24,6 @@ jobs:
           - name: Checkout Repo
             uses: actions/checkout@v4
 
-          - name: Setup
-            env:
-              token: ${{ secrets.token }}
             working-directory: TerraformGit/
             run:  terraform fmt -check
 
@@ -31,8 +31,6 @@ jobs:
             run: terraform init
 
           - name: terraform plan
-            env:
-              TF_LOG: DEBUG
             run: terraform plan -no-color
 
           - name: terraform apply
