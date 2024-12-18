@@ -22,12 +22,21 @@ jobs:
             env:
               token: ${{ secrets.token }}
             working-directory: TerraformGit/
-            run: |
-                  terraform fmt -check
-                  terraform init
-                  terraform plan -no-color
-                  terraform apply -no-color -auto-approve
-                  echo ${{inputs.a}}
+
+          - name: terraform fmt -check
+            run:  terraform fmt -check
+
+          - name:  terraform init
+            run: terraform init
+
+          - name: terraform plan
+            run: terraform plan -no-color
+
+          -name: terraform apply
+           run: terraform apply -no-color -auto-approve
+                 
+
+                
              
 
              
