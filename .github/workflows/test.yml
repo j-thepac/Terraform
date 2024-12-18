@@ -10,6 +10,9 @@ on:
 jobs:
     job1:
        runs-on: [ubuntu-latest]
+       defaults:
+           run:
+               working-directory: TerraformGit/
        steps:
 
           - name: Install Terraform
