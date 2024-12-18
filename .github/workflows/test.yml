@@ -27,11 +27,17 @@ jobs:
             working-directory: TerraformGit/
             run:  terraform fmt -check
 
-          - name:  terraform init
+          - name:  terraform_init
             run: terraform init
 
-          - name: terraform plan
+          - name: terraform_plan
             run: terraform plan -no-color
+
+          - name: Logs
+            run: |
+              echo ${{ steps.terraform_plan.outputs.stdinfo }}
+              echo ${{ steps.terraform_plan.outputs.stderr }}
+              echo ${{ steps.terraform_plan.outputs.exitcode }}
 
           - name: terraform apply
             run: terraform apply -no-color -auto-approve
