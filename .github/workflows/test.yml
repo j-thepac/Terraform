@@ -24,11 +24,10 @@ jobs:
           - name: Checkout Repo
             uses: actions/checkout@v4
 
-            working-directory: TerraformGit/
-            run:  terraform fmt -check
-
           - name:  terraform_init
-            run: terraform init
+            run: |
+             terraform fmt -check
+             terraform init
 
           - name: terraform_plan
             run: terraform plan -no-color
