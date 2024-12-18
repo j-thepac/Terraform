@@ -11,11 +11,16 @@ jobs:
     job1:
        runs-on: [ubuntu-latest]
        steps:
+
+          - name: Install Terraform
+            uses: hashicorp/setup-terraform@v3
+      
+          - name: Checkout Repo
+            uses: actions/checkout@v4
+
           - name: Git Creation Using Terraform
             env:
               key: ${{ secrets.token }}
-            uses: hashicorp/setup-terraform@v3
-            uses: actions/checkout@v4
             working-directory: TerraformGit/
             run: |
                   terraform fmt -check
