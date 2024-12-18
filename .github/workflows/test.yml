@@ -20,7 +20,7 @@ jobs:
 
           - name: Git Creation Using Terraform
             env:
-              key: ${{ secrets.token }}
+              token: ${{ secrets.token }}
             working-directory: TerraformGit/
             run: |
                   terraform fmt -check
