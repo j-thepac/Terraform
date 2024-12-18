@@ -3,7 +3,6 @@
 # terraform plan -no-color
 # terraform apply -no-color -auto-approve
 
-
 terraform {
   required_providers {
     github = {

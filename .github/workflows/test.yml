@@ -1,11 +1,9 @@
-name: Test2
+name: createGitRepo
 on: 
     workflow_dispatch:
         inputs:
             a: 
               type: string
-
-
 
 jobs:
     job1:
@@ -29,18 +27,11 @@ jobs:
             run: |
              terraform fmt -check
              terraform init
-
-          - name: terraform_plan
-            run: terraform plan -no-color
-
-          - name: Logs
-            run: |
-              echo ${{ steps.terraform_plan.outputs.stdinfo }}
-              echo ${{ steps.terraform_plan.outputs.stderr }}
-              echo ${{ steps.terraform_plan.outputs.exitcode }}
-
-          - name: terraform apply
-            run: terraform apply -no-color -auto-approve
+             terraform plan -no-color
+             echo ${{ steps.terraform_plan.outputs.stdinfo }}
+             echo ${{ steps.terraform_plan.outputs.stderr }}
+             echo ${{ steps.terraform_plan.outputs.exitcode }}
+             terraform apply -no-color -auto-approve
                  
 
                 
