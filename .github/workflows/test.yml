@@ -18,12 +18,10 @@ jobs:
           - name: Checkout Repo
             uses: actions/checkout@v4
 
-          - name: Git Creation Using Terraform
+          - name: Setup
             env:
               token: ${{ secrets.token }}
             working-directory: TerraformGit/
-
-          - name: terraform fmt -check
             run:  terraform fmt -check
 
           - name:  terraform init
