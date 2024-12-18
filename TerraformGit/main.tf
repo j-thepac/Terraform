@@ -11,10 +11,9 @@ variable "key" {
   type      = string
   sensitive = true
 }
-
 provider "github" {
   token = var.key
-  owner = "j.thepac@gmail.com"
+  owner = "j-thepac"
 }
 
 resource "github_repository" "example" {
