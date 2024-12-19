@@ -10,7 +10,7 @@ jobs:
        runs-on: [ubuntu-latest]
        env:
         TF_VAR_token: ${{ secrets.token }}
-        TF_LOG: DEBUG
+        # TF_LOG: DEBUG #LOGGING
        defaults:
            run:
                working-directory: TerraformGit/
