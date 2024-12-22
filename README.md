@@ -24,5 +24,8 @@ To Run using Github Actions:
 - Goto Actions
 - Run relativen Actions 
 
-Note : In terraform if Resource code block is commented or removed from the script , the current resource will be deleetd or removed .
+Note : 
+- In terraform if Resource code block is commented or removed from the script , the current resource will be deleetd or removed .
+
+- Use TerraformTest to practise code
 
