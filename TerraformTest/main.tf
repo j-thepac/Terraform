@@ -8,7 +8,7 @@ terraform {
 
 resource "local_file" "hello" {
     content  = "hello world"
-    filename = "1.txt"
+    filename = "2.txt"
 }
 
 # Using the local_file data source to read the file
