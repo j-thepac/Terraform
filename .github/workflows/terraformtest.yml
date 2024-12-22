@@ -58,7 +58,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: Terraformtest
+        working-directory: TerraformTest/
       
     steps:
     # Checkout the repository to the GitHub Actions runner
