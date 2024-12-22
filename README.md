@@ -2,8 +2,15 @@
 
 [Terraform Basics](https://gist.github.com/j-thepac/e837155bee50e3bcce04a64876ba35ac)
 
+Note : 
+- In terraform if Resource code block is commented or removed from the script , the current resource will be deleetd or removed .
+- Use TerraformTest to practise code
+- Change existing main.tf > main.tf.bak and create new main.tf
+
 You can run each of the terraform scripts either locally (CLI)  or using GithubActions
 
+
+### Running Locally 
 Pre-Req:
     For running locally, make sure u have installed :
 - Docker
@@ -24,8 +31,5 @@ To Run using Github Actions:
 - Goto Actions
 - Run relativen Actions 
 
-Note : 
-- In terraform if Resource code block is commented or removed from the script , the current resource will be deleetd or removed .
 
-- Use TerraformTest to practise code
 
