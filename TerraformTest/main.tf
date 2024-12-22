@@ -1,4 +1,3 @@
-#Hi
 terraform {
     required_providers {
         local = {
@@ -12,13 +11,11 @@ resource "local_file" "hello" {
     filename = "1.txt"
 }
 
-
-# Read the contents of the existing file
-locals {
-    file_content = file("1.txt")
+# Using the local_file data source to read the file
+data "local_file" "example" {
+    filename = "1.txt"
 }
 
-# Output the contents of the file
-output "read_file_content" {
-    value = local.file_content
+output "file_content" {
+    value = data.local_file.example.content
 }
