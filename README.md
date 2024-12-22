@@ -2,7 +2,7 @@
 
 [Terraform Basics](https://gist.github.com/j-thepac/e837155bee50e3bcce04a64876ba35ac)
 
-You can run each of the terraform scripts either locally or using GithubActions
+You can run each of the terraform scripts either locally (CLI)  or using GithubActions
 
 Pre-Req:
     For running locally, make sure u have installed :
