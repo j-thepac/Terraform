@@ -10,9 +10,19 @@ terraform {
 
 # Pa$$word123
 // Configure the provider
+
+variable "token" {
+  type      = string
+  sensitive = true
+}
+
+variable "id" {
+  type      = string
+  sensitive = true
+}
 provider "hcp" {
-  client_id     = "j.thepac@gmail.com"
-  client_secret = "Pa$$word123"
+  client_id     = var.id
+  client_secret = var.token
 }
 
 
