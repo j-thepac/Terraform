@@ -5,6 +5,10 @@ terraform {
       source  = "hashicorp/hcp"
       version = "~> 0.101.0"
     }
+    github = {
+      source  = "integrations/github"
+      version = "~> 5.0"
+    }
   }
 }
 
@@ -15,11 +19,20 @@ variable "token" {
   type      = string
   sensitive = true
 }
+provider "github" {
+  token = var.token
+  owner = "j-thepac"
+}
 
 variable "id" {
   type      = string
   sensitive = true
 }
+provider "github" {
+  token = var.id
+  owner = "j-thepac"
+}
+
 provider "hcp" {
   client_id     = var.id
   client_secret = var.token
