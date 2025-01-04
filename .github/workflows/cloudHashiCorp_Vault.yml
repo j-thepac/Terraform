@@ -1,4 +1,4 @@
-name: CI
+name: cloudHashiCorp_Vault
 
 on:
   # push:
@@ -22,18 +22,18 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Terraform 
-        working-directory: Terraform/
         run: |
-          terraform fmt -check
+          cd cloudHashiCorp_Vault
+          # terraform fmt -check
           terraform init
           terraform plan -no-color
           terraform apply -no-color -auto-approve
 
-      - name: Logs
-        run: |
-          echo ${{ steps.Terraform.outputs.stderr }}
-          echo ${{ steps.Terraform.outputs.exitcode }}
+      # - name: Logs
+      #   run: |
+      #     echo ${{ steps.Terraform.outputs.stderr }}
+      #     echo ${{ steps.Terraform.outputs.exitcode }}
 
-      - name: Stop
-        run: |
-          echo "Stop"
+      # - name: Stop
+      #   run: |
+      #     echo "Stop"
