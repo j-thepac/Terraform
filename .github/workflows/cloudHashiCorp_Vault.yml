@@ -14,6 +14,8 @@ jobs:
     env:
       TF_ID: ${{ secrets.hashicorpid }}
       TF_TOKEN: ${{ secrets.hashicorptoken }}
+      timeout-minutes: 2
+      TF_LOG: DEBUG  # Enable debug logging
       
     steps:
       - name: Start
@@ -28,6 +30,10 @@ jobs:
       - name: Terraform 
         run: |
           cd cloudHashiCorp_Vault
+          echo "Current Directory:"
+          pwd
+          echo "Files in Directory:"
+          ls -la          
           # terraform fmt -check
           terraform init
           terraform plan -no-color
