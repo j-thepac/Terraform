@@ -18,5 +18,5 @@ provider "vault" {
 }
 
 data "vault_generic_secret" "my_secret" {
-  path = "cubbyhole/test"
+  path = "secrets/myPath/dict"
 }
