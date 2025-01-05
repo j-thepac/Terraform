@@ -1,35 +1,22 @@
-// Pin the version
-terraform {
-  required_providers {
-    hcp = {
-      source  = "hashicorp/hcp"
-      version = "~> 0.101.0"
-    }
-  }
-}
+/*
+
+- Start Dockerplayground
+- docker run -p 8200:8200 -e 'VAULT_DEV_ROOT_TOKEN_ID=dev-only-token' hashicorp/vault
+- cli- vault read cubbyhole/test
+*/
 
 
-variable "HCP_CLIENT_SECRET" {
+variable "HASHICORPTOKEN" {
   type      = string
   sensitive = true
 }
 
-variable "HCP_CLIENT_ID" {
-  type      = string
-  sensitive = true
-}
-provider "hcp" {
-  client_id     = var.HCP_CLIENT_ID
-  client_secret = var.HCP_CLIENT_SECRET
+provider "vault" {
+  address = "http://ip172-18-0-34-ctt2j48l2o9000dpetqg-8200.direct.labs.play-with-docker.com/ui/vault"
+  skip_tls_verify = true
+  token = var.HASHICORPTOKEN
 }
 
-
-data "hcp_vault_secrets_secret" "example" {
-  app_name    = "sample-app"
-  secret_name = "my_secret"
-}
-
-output "my_secret_value" {
-  value     = data.hcp_vault_secrets_secret.example.secret_value
-  sensitive = true
+data "vault_generic_secret" "my_secret" {
+  path = "secret/path/to/mysecret"
 }
