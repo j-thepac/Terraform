@@ -18,5 +18,5 @@ provider "vault" {
 }
 
 data "vault_generic_secret" "my_secret" {
-  path = "myPath/data/dict"
+  path = "myPath/dict"  # Correct path
 }
