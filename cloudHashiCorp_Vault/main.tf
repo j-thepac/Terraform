@@ -3,7 +3,11 @@
 - Start Dockerplayground
 - docker run -p 8200:8200 -e 'VAULT_DEV_ROOT_TOKEN_ID=dev-only-token' hashicorp/vault
 (Save above in sh file and run sh file.sh)
+
+UI 
 - Open port and login with "dev-only-token"
+
+Modify Below Code 
 - address:  Vault > Tools > APi Explorer
 - token : dev-only-token
 

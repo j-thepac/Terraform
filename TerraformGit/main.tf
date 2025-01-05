@@ -12,12 +12,12 @@ terraform {
   }
 }
 
-variable "token" {
+variable "TOKEN" {
   type      = string
   sensitive = true
 }
 provider "github" {
-  token = var.token
+  token = var.TOKEN
   owner = "j-thepac"
 }
 
