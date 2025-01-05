@@ -16,5 +16,5 @@ provider "vault" {
 }
 
 data "vault_generic_secret" "my_secret" {
-  path = "secrets/test"  
+  path = "secret/test"  
 }
