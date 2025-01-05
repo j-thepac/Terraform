@@ -26,11 +26,6 @@ jobs:
       - name: Terraform 
         run: |
           cd cloudHashiCorp_Vault
-          echo "Current Directory:"
-          pwd
-          ls -la   
-          echo "Env:"   
-          echo $TF_VAR_HASHICORPTOKEN 
           terraform init
           terraform plan -no-color
           terraform apply -no-color -auto-approve

@@ -18,3 +18,7 @@ provider "vault" {
 data "vault_generic_secret" "my_secret" {
   path = "secret/test"  
 }
+
+output "key" {
+  value = data.vault_generic_secret.my_secret
+}
