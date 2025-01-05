@@ -10,7 +10,7 @@ Note :
 You can run each of the terraform scripts either locally (CLI)  or using GithubActions
 
 ## ways to pass data to terrafrom
-- setting System env value from Git and accessing in Terraform
+- setting System env value from Git(TF_VAR_name) and accessing in Terraform (varibale name{}_)
 - Passing arguements to terraform plan using switch
 - TF_VARS file
 
