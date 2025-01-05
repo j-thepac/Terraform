@@ -9,18 +9,18 @@ terraform {
 }
 
 
-variable "token" {
+variable "TOKEN" {
   type      = string
   sensitive = true
 }
 
-variable "id" {
+variable "ID" {
   type      = string
   sensitive = true
 }
 provider "hcp" {
-  client_id     = var.id
-  client_secret = var.token
+  client_id     = var.ID
+  client_secret = var.TOKEN
 }
 
 
