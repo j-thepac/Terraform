@@ -12,8 +12,7 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     env:
-      TF_VAR_HCP_CLIENT_ID: ${{ secrets.hashicorpid }}
-      TF_VAR_HCP_CLIENT_SECRET: ${{ secrets.hashicorptoken }}
+      TF_VAR_HASHICORPTOKEN: ${{ secrets.HASHICORPTOKEN }}
       timeout-minutes: 2
       TF_LOG: DEBUG  # Enable debug logging
       
@@ -34,12 +33,11 @@ jobs:
           pwd
           ls -la   
           echo "Env:"   
-          echo $TF_VAR_ID
-          echo $TF_VAR_TOKEN    
-          # terraform fmt -check
+          echo $TF_VAR_HASHICORPTOKEN 
           terraform init
-          terraform plan -no-color -input=false
-          terraform apply -no-color -auto-approve -input=false
+          terraform plan -no-color -input=false -var "HASHICORPTOKEN=${{ secrets.HASHICORPTOKEN }}"
+          terraform apply -no-color -auto-approve -input=false -var "HASHICORPTOKEN=${{ secrets.HASHICORPTOKEN }}"
+
 
       # - name: Logs
       #   run: |
