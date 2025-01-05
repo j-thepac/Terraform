@@ -10,10 +10,36 @@ Note :
 You can run each of the terraform scripts either locally (CLI)  or using GithubActions
 
 ## ways to pass data to terrafrom
-- setting System env value from Git(TF_VAR_name) and accessing in Terraform (varibale name{}_)
-- Passing arguements to terraform plan using switch
-- TF_VARS file
+1. setting System env value from Git(TF_VAR_name) and accessing in Terraform (varibale name{}_)
+        ```
+        #gitfile.yml
+        env:
+        TF_VAR_TOKEN: ${{ secrets.token }}
+        ```
 
+        ```
+        #main.tf
+        variable "TOKEN" {
+        type      = string
+        sensitive = true
+        }
+        provider "xx" {
+        token = var.TOKEN
+        }
+        ```
+2. Passing arguements to terraform plan using switch
+        ```
+        terraform plan -no-color -var "id=${{ secrets.id }}"
+        ```
+3. TF_VARS file
+        ```
+        #git.yml
+        terraform apply -var-file="terraform.tfvars"
+        ```
+        ```
+        // terraform.tfvars
+        hcp_client_id     = "your_client_id"
+        ```
 
 ### Running Locally 
 Pre-Req:
