@@ -12,7 +12,7 @@ variable "HASHICORPTOKEN" {
 }
 
 provider "vault" {
-  address = "http://ip172-18-0-34-ctt2j48l2o9000dpetqg-8200.direct.labs.play-with-docker.com/v1/"
+  address = "http://ip172-18-0-34-ctt2j48l2o9000dpetqg-8200.direct.labs.play-with-docker.com/"
   skip_tls_verify = true
   token = var.HASHICORPTOKEN
 }
