@@ -11,6 +11,7 @@ You can run each of the terraform scripts either locally (CLI)  or using GithubA
 
 ## ways to pass data to terrafrom
 1. setting System env value from Git(TF_VAR_name) and accessing in Terraform (varibale name{}_)
+
         ```
         #gitfile.yml
         env:
@@ -28,10 +29,12 @@ You can run each of the terraform scripts either locally (CLI)  or using GithubA
         }
         ```
 2. Passing arguements to terraform plan using switch
+
         ```
         terraform plan -no-color -var "id=${{ secrets.id }}"
         ```
 3. TF_VARS file
+
         ```
         #git.yml
         terraform apply -var-file="terraform.tfvars"
