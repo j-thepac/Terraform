@@ -21,4 +21,5 @@ data "vault_generic_secret" "my_secret" {
 
 output "key" {
   value = data.vault_generic_secret.my_secret
+  sensitive = true
 }
