@@ -14,7 +14,7 @@ jobs:
     env:
       TF_VAR_HASHICORPTOKEN: ${{ secrets.HASHICORPTOKEN }}
       timeout-minutes: 2
-      TF_LOG: DEBUG  # Enable debug logging
+      #TF_LOG: DEBUG  # Enable debug logging
       
     steps:
       - name: Start
