@@ -5,15 +5,9 @@ terraform {
       source  = "hashicorp/hcp"
       version = "~> 0.101.0"
     }
-    github = {
-      source  = "integrations/github"
-      version = "~> 5.0"
-    }
   }
 }
 
-# Pa$$word123
-// Configure the provider
 
 variable "token" {
   type      = string
@@ -24,7 +18,10 @@ variable "id" {
   type      = string
   sensitive = true
 }
-
+provider "hcp" {
+  client_id     = var.id
+  client_secret = var.token
+}
 
 
 data "hcp_vault_secrets_secret" "example" {

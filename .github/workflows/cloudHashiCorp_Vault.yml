@@ -32,8 +32,10 @@ jobs:
           cd cloudHashiCorp_Vault
           echo "Current Directory:"
           pwd
-          echo "Files in Directory:"
-          ls -la          
+          ls -la   
+          echo "Env:"   
+          echo $TF_VAR_ID
+          echo $TF_VAR_TOKEN    
           # terraform fmt -check
           terraform init
           terraform plan -no-color -input=false

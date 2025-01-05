@@ -9,6 +9,11 @@ Note :
 
 You can run each of the terraform scripts either locally (CLI)  or using GithubActions
 
+## ways to pass data to terrafrom
+- setting System env value from Git and accessing in Terraform
+- Passing arguements to terraform plan using switch
+- TF_VARS file
+
 
 ### Running Locally 
 Pre-Req:
@@ -22,7 +27,7 @@ Locally:
     ```
      terraform fmt -check
      terraform init
-     terraform plan -no-color
+     terraform plan -no-color 
      terraform apply -no-color -auto-approve
     ```
 
