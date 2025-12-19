@@ -213,7 +213,7 @@ provider "github" {
 
 /*2.Env variable  */
 variable "terraform_git_token" {}
-#$export TF_VAR_terraform_git_token="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"
+#$export TF_VAR_terraform_git_token="create token from git"
 
 
 /*3.Config :  Copy from Terraform Website */
