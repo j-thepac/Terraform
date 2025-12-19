@@ -2,7 +2,7 @@
 
 ## Overview
 
-1. Create multiple cloud / online apps, link and configure them
+1. Create multiple resources
 2. Infrastructure as Code (IaC)
 3. Sandbox: [https://developer.hashicorp.com/terraform/sandbox](https://developer.hashicorp.com/terraform/sandbox)
 4. Terraform loads all `.tf` files in the same folder together
