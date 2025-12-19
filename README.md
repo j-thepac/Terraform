@@ -61,44 +61,29 @@ my_block {
 
 ## Variables, Locals, Outputs
 
-### Variable
+### Variable : CLI , File , Env Variable
 
 * Input from user
 * Access using `var.name`
 * Interpolation: `${var.name}`
 
+* Pass via CLI : Keep it block blank
 ```hcl
-variable "a" {
-  default = 1
-}
+# terraform plan -var="a=1"
+variable "a" { } 
 ```
 
-* Pass via CLI :
-```hcl
-variable "a" {
-  
-} /* blank*/
+* Read from env : export in CMD prompt and Keep it block blank but
 ```
-```bash
-terraform plan -var="a=1"
+# $export TF_VAR_a=1
+variable "a" { } 
 ```
 
-* Using tfvars file (`prod.tfvars`):
-
+* Using tfvars file (`Create file prod.tfvars`):
 ```hcl
 a = 1
+#terraform plan -var-file="prod.tfvars"
 ```
-
-```bash
-terraform plan -var-file="prod.tfvars"
-```
-
-* Using environment variable:
-
-```bash
-export TF_VAR_a=1
-```
-
 ### Locals
 
 * For internal usage
