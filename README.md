@@ -56,7 +56,7 @@ my_block {
   - Others
     -   module {} : Functions
     -   terraform {} : Terraform Backend Settings 
-
+    -   data {} : Access External Sources 
 ---
 
 ## Variables, Locals, Outputs
