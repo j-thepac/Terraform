@@ -1,12 +1,3 @@
-terraform {
-  required_providers {
-    http = {
-      source  = "hashicorp/http"
-      version = "3.4.5"
-    }
-  }
-}
-
 provider "http" {
   # Configuration options can be added here if needed
 }
