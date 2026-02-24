@@ -1,36 +1,23 @@
-# terraform fmt -check
-# terraform init
-# terraform plan -no-color
-# terraform apply -no-color -auto-approve
+# # terraform fmt -check
+# # terraform init
+# # terraform plan -no-color
+# # terraform apply -no-color -auto-approve
+
 
 terraform {
   required_providers {
-    github = {
-      source  = "integrations/github"
-      version = "~> 5.0"
-    }
+    github={source= "integrations/github",version = "~>5.0"}
   }
 }
-
-variable "TOKEN" {
-  type      = string
-  sensitive = true
+provider "github"{ token = var.git_token}
+variable "git_token"{}  #export TF_VAR_git_token="token"
+locals{
+d={"repo1"="my_desc1","repo2"="my_desc2"}
 }
-provider "github" {
-  token = var.TOKEN
-  owner = "j-thepac"
-}
-
-locals {
-  repos = {
-    c1 = { desc = "description1" },
-    c2 = { desc = "description2" }
-  }
-}
-resource "github_repository" "example" {
-  for_each = local.repos
-
+resource "github_repository" "my_git" {
+ for_each = local.d
   name        = each.key
-  description = each.value.desc
-  visibility  = "public"
+  description = each.value
+  visibility = "public"
 }
+
